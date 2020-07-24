@@ -16,22 +16,10 @@ export interface Employee{
 export class AppComponent implements OnInit{
   title = 'angular-with-firebase';
 
-  employees : any;
-
-  constructor(private employeeService : EmployeeService){
+  constructor(){
   }
 
-  ngOnInit(){
-    console.log("in ngOninit")
-    this.employeeService.fetchEmployeeList().valueChanges().subscribe(employees => {
-      employees.forEach(employee => {
-        console.log("firstname :: " + employee['firstname']);
-        console.log("lastname :: " + employee['lastname']);
-        console.log("email :: " + employee['email']);  
-      });
-      this.employees = employees;
-      console.log("employee size " + this.employees)
-    });
+  ngOnInit(){    
   }
 
 }
